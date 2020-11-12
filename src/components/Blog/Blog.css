@@ -6,11 +6,17 @@
 }
 
 img {
-  width: 100%;
+  /* width */
+  max-height: 80vh;
+  max-width: 100%;
 }
 
 .img-wrapper {
-    padding: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .img-blurb {
