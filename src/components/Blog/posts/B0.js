@@ -25,7 +25,7 @@ const Post = () => (
 
     <div className="img-wrapper">
       <img src={chaiCouple} alt="chai-couple" />
-      <div className="img-blurb"><p>chai for two</p></div>
+      <div className="img-blurb"><p>chai~</p></div>
     </div>
 
     <div className="img-wrapper">
