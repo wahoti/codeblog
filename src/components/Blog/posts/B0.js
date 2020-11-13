@@ -16,7 +16,7 @@ const Post = () => (
     <h3 className="primaryColor">First post! introduction</h3>
 
     <p>Hi welcome to my food blog :)</p>
-    <p>To get things started will show some nice breakfasts from the past couple months.</p>
+    <p>To get things started will show some nice breakfasts.</p>
 
     <div className="img-wrapper">
       <img src={fruityBkfst} alt="fruity-bfkst" />
@@ -35,7 +35,7 @@ const Post = () => (
 
     <div className="img-wrapper">
       <img src={bkfst} alt="bfkst" />
-      <div className="img-blurb"><p>breakfast</p></div>
+      <div className="img-blurb"><p>egghole breakfast</p></div>
     </div>
 
     <div className="img-wrapper">
