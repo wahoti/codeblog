@@ -10,12 +10,15 @@ import Blog from '../Blog'
 
 import './App.css'
 
+// NEW POST TODO
 const NUMBER_OF_POSTS = 2
 
 function App() {
   const location = useLocation()
 
   const nextIdx = (n) => {
+    if (location.pathname === '/about') return '/0'
+
     const idx = Number(location.pathname.replace('/','')) || 0
     const next = idx + n
     if (next < 0) return '/0'
@@ -25,7 +28,6 @@ function App() {
   }
 
   const progress = (Number(window.location.href.split('/').pop()) || 0) + 1
-
 
   return (
     <>
@@ -53,10 +55,19 @@ function App() {
             </Switch>
         </main>
         <aside></aside>
-        <footer></footer>
+        <footer>
+        {
+          location.pathname !== '/about'
+            ? (<Link className="padding primaryColor" to={'/about'}>about</Link>)
+            : (<Link className="padding primaryColor" to={'/'}>home</Link>)
+        }
+        </footer>
       </div>
     </>
   )
 }
 
 export default App
+
+// <Link className="icon-button" to={'/0'}>&#8676;</Link>
+// <Link className="icon-button" to={`/${NUMBER_OF_POSTS - 1}`}>&#8677;</Link>

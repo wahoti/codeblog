@@ -28,6 +28,10 @@ header {
     display: flex;
     flex-direction: column;
   }
+
+  main {
+    flex: 1;
+  }
 }
 
 .icon-button {
@@ -41,7 +45,21 @@ header {
   padding-left: 16px;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-column: span 3;
+}
 
+.padding {
+  padding: 8px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
 
 /* .App {
   text-align: center;

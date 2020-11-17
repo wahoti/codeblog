@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import './Blog.css'
 
+// NEW POST TODO
 const B0 = React.lazy(() => import('./posts/B0'))
 const B1 = React.lazy(() => import('./posts/B1'))
 
@@ -11,6 +12,7 @@ function Blog(props) {
   let { id } = useParams()
 
   const renderBlog = (blogId) => {
+    // NEW POST TODO
     switch(blogId) {
       case '0':
         return <B0 />
