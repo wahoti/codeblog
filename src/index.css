@@ -20,6 +20,10 @@ code {
   background-color: #ffcc00;
 }
 
+.primaryBorderBot {
+  border-bottom: 1px solid #ffcc00;
+}
+
 .tertiaryColorBack {
   background-color: #282c34;
 }

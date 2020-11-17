@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <div className="container tertiaryColorBack">
-        <header className="primaryColorBack">
+        <header className="tertiaryColorBack primaryBorderBot">
           food-blog
           <div>
             <Link className="icon-button" to={nextIdx(-1)}>&#8592;</Link>
