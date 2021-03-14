@@ -3,7 +3,6 @@ import {
   Switch,
   Route,
   Link,
-  useLocation,
   Redirect,
 } from 'react-router-dom'
 
@@ -12,20 +11,12 @@ import Blog, { BLOGS } from '../Blog'
 
 import './App.css'
 
-// notes
-// turn the arrows into a toggle button
-  // hide the toggle button on small screens
-// add a scrollable menu to the nav bar
-  // auto show the nav bar when screen is large enough 
-
 const NUMBER_OF_POSTS = BLOGS.length
 
 function App() {
-  const location = useLocation()
   const [menu, setMenu] = useState(false)
-  const toggleMenu = () => {
-    setMenu(prevState => prevState ? false : true)
-  }
+  const toggleMenu = () => setMenu(prevState => prevState ? false : true)
+  const menuOff = () => setMenu(false)
 
   return (
     <>
@@ -40,14 +31,23 @@ function App() {
         </header>
         <nav>
           <div className={`${!menu ? 'hidden' : 'visible'}`}>
+            <Link
+              className="nav-link primaryColor"
+              to={'/about'}
+              onClick={menuOff}
+            >
+              about
+            </Link>
             {BLOGS?.map(({ title }, i) => (
-              <Link className="nav-link primaryColor" to={`/${i}`} key={title}>{title}</Link>
+              <Link
+                className="nav-link primaryColor"
+                to={`/${i}`}
+                key={title}
+                onClick={menuOff}
+              >
+                {title}
+              </Link>
             ))}
-          {
-            location.pathname !== '/about'
-              ? (<Link className="nav-link primaryColor" to={'/about'}>about</Link>)
-              : (<Link className="nav-link primaryColor" to={'/'}>home</Link>)
-          }
           </div>
         </nav>
         <main>

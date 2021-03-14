@@ -2,22 +2,15 @@ import katsu from './imgs/B1/katsu.jpg'
 import schwarma from './imgs/B1/schwarma.jpg'
 import kabuli from './imgs/B1/kabuli.jpg'
 
+import Img from '../Img'
+
 const Post = () => (
   <>
-    <div className="img-wrapper">
-      <img src={katsu} alt="katsu" />
-      <div className="img-blurb"><p>katsu</p></div>
-    </div>
+    <Img src={katsu} alt="katsu" blurb="katsu" />
 
-    <div className="img-wrapper">
-      <img src={schwarma} alt="schwarma" />
-      <div className="img-blurb"><p>schwarma</p></div>
-    </div>
+    <Img src={schwarma} alt="schwarma" blurb="schwarma" />
 
-    <div className="img-wrapper">
-      <img src={kabuli} alt="kabuli" />
-      <div className="img-blurb"><p>kabuli</p></div>
-    </div>
+    <Img src={kabuli} alt="kabuli" blurb="kabuli" />
   </>
 )
 
