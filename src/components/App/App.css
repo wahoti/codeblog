@@ -1,3 +1,23 @@
+.nav-link {
+  margin: 4px;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  border-bottom: 1px solid #ffcc00;
+}
+
 .container {
   min-height: 100vh;
   margin: 0;
@@ -18,8 +38,22 @@ header {
 @media (min-width: 700px) {
   .container {
     display: grid;
-    grid-template-columns: 5% 1fr 5%;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: 64px 1fr auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav div {
+    display: flex !important;
+    border-right: 1px solid #ffcc00;
+  }
+
+  main {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -59,6 +93,17 @@ footer {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.hamburger div {
+  width: 35px;
+  height: 5px;
+  background-color: #ffcc00;
+  margin: 6px 0;
+}
+
+.hamburger {
+  cursor: pointer;
 }
 
 /* .App {

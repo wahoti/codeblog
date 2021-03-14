@@ -1,46 +1,55 @@
+import React, { useState } from 'react'
 import {
   Switch,
   Route,
   Link,
   useLocation,
+  Redirect,
 } from 'react-router-dom'
 
 import About from '../About'
-import Blog from '../Blog'
+import Blog, { BLOGS } from '../Blog'
 
 import './App.css'
 
-// NEW POST TODO
-const NUMBER_OF_POSTS = 2
+// notes
+// turn the arrows into a toggle button
+  // hide the toggle button on small screens
+// add a scrollable menu to the nav bar
+  // auto show the nav bar when screen is large enough 
+
+const NUMBER_OF_POSTS = BLOGS.length
 
 function App() {
   const location = useLocation()
-
-  const nextIdx = (n) => {
-    if (location.pathname === '/about') return '/0'
-
-    const idx = Number(location.pathname.replace('/','')) || 0
-    const next = idx + n
-    if (next < 0) return '/0'
-    if (next > NUMBER_OF_POSTS - 1) return `/${NUMBER_OF_POSTS - 1}`
-
-    return `/${next}`
+  const [menu, setMenu] = useState(false)
+  const toggleMenu = () => {
+    setMenu(prevState => prevState ? false : true)
   }
-
-  const progress = (Number(window.location.href.split('/').pop()) || 0) + 1
 
   return (
     <>
       <div className="container tertiaryColorBack">
         <header className="tertiaryColorBack primaryBorderBot">
           food-blog
-          <div>
-            <Link className="icon-button" to={nextIdx(-1)}>&#8592;</Link>
-            <span className="padding-left">{progress}/{NUMBER_OF_POSTS}</span>
-            <Link className="icon-button padding-left" to={nextIdx(1)}>&#8594;</Link>
+          <div className="hamburger" onClick={toggleMenu}>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </header>
-        <nav></nav>
+        <nav>
+          <div className={`${!menu ? 'hidden' : 'visible'}`}>
+            {BLOGS?.map(({ title }, i) => (
+              <Link className="nav-link primaryColor" to={`/${i}`} key={title}>{title}</Link>
+            ))}
+          {
+            location.pathname !== '/about'
+              ? (<Link className="nav-link primaryColor" to={'/about'}>about</Link>)
+              : (<Link className="nav-link primaryColor" to={'/'}>home</Link>)
+          }
+          </div>
+        </nav>
         <main>
             <Switch>
               <Route path="/about">
@@ -50,17 +59,12 @@ function App() {
                 <Blog />
               </Route>
               <Route path="/">
-                <Blog />
+                <Redirect to="/0" /> 
               </Route>
             </Switch>
         </main>
         <aside></aside>
         <footer>
-        {
-          location.pathname !== '/about'
-            ? (<Link className="padding primaryColor" to={'/about'}>about</Link>)
-            : (<Link className="padding primaryColor" to={'/'}>home</Link>)
-        }
         </footer>
       </div>
     </>
@@ -68,6 +72,3 @@ function App() {
 }
 
 export default App
-
-// <Link className="icon-button" to={'/0'}>&#8676;</Link>
-// <Link className="icon-button" to={`/${NUMBER_OF_POSTS - 1}`}>&#8677;</Link>

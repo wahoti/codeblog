@@ -3,18 +3,11 @@ import pancakeBkfst from './imgs/B0/pancake-bkfst.jpg'
 import egghole from './imgs/B0/egghole.jpg'
 import eggholeBacon from './imgs/B0/egg-hole-bacon.jpg'
 import bkfst from './imgs/B0/bkfst-1.jpg'
-
 import cinabun from './imgs/B0/cinabun.jpg'
 import chaiCouple from './imgs/B0/chai-couple.jpg'
 
-// import katsu from './imgs/B0/katsu.jpg'
-// import schwarma from './imgs/B0/schwarma.jpg'
-
 const Post = () => (
-  <div className="post-wrapper">
-    <h3 className="primaryColor">Thu Nov 12 2020</h3>
-    <h3 className="primaryColor">First post! introduction</h3>
-
+  <>
     <p>Hi welcome to my food blog :)</p>
     <p>To get things started will show some nice breakfasts.</p>
 
@@ -52,7 +45,7 @@ const Post = () => (
       <img src={cinabun} alt="cinabun" />
       <div className="img-blurb"><p>cinabun!</p></div>
     </div>
-  </div>
+  </>
 )
 
 export default Post
