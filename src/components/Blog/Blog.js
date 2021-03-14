@@ -19,6 +19,7 @@ const B7 = React.lazy(() => import('./posts/B7'))
 const B8 = React.lazy(() => import('./posts/B8'))
 const B9 = React.lazy(() => import('./posts/B9'))
 const B10 = React.lazy(() => import('./posts/B10'))
+const B11 = React.lazy(() => import('./posts/B11'))
 
 // ADD TO RENDER LIST
 const BLOGS_RENDER = [
@@ -32,6 +33,7 @@ const BLOGS_RENDER = [
   () => (<B7 />),
   () => (<B8 />),
   () => (<B9 />),
+  () => (<B11 />),
   () => (<B10 />),
 ]
 
@@ -67,8 +69,11 @@ export const BLOGS = [
   }, { // 9
     date: 'Feb 20 2021',
     title: 'Thai Date',
+  }, { // 11
+    date: 'Mar 9 2021',
+    title: 'Birthday!',
   }, { // 10
-    date: 'Mar 14 2021',
+    date: 'Mar 9 2021',
     title: 'Meatball Special',
   },
 

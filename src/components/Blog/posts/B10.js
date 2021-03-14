@@ -4,6 +4,7 @@ import sauce from './imgs/B10/sauce.jpg'
 import wip from './imgs/B10/wip.jpg'
 import salad from './imgs/B10/salad.jpg'
 import ready from './imgs/B10/ready.jpg'
+import bread from './imgs/B10/bread.jpg'
 
 import Img from '../Img'
 
@@ -14,6 +15,7 @@ const Post = () => (
     <Img src={sauce} alt="sauce" blurb="sauce" />
     <Img src={wip} alt="wip" blurb="wip" />
     <Img src={salad} alt="salad" blurb="salad" />
+    <Img src={bread} alt="bread" blurb="bread" />
     <Img src={ready} alt="ready" blurb="ready" />
   </>
 )
