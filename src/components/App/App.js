@@ -59,7 +59,7 @@ function App() {
                 <Blog />
               </Route>
               <Route path="/">
-                <Redirect to="/0" /> 
+                <Redirect to={`/${NUMBER_OF_POSTS - 1}`} /> 
               </Route>
             </Switch>
         </main>
