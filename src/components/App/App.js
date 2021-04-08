@@ -14,15 +14,24 @@ import './App.css'
 const NUMBER_OF_POSTS = BLOGS.length
 
 function App() {
-  const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(null)
   const toggleMenu = () => setMenu(prevState => prevState ? false : true)
   const menuOff = () => setMenu(false)
+
+  let menuClass = 'menu'
+  if (menu === null) {
+    menuClass += ' menu-init'
+  } else if (menu) {
+    menuClass += ' menu-show'
+  } else if (!menu) {
+    menuClass += ' menu-hide'
+  }
 
   return (
     <>
       <div className="container tertiaryColorBack">
         <header className="tertiaryColorBack primaryBorderBot">
-          food-blog
+          code-blog
           <div className="hamburger" onClick={toggleMenu}>
             <div></div>
             <div></div>
@@ -30,7 +39,8 @@ function App() {
           </div>
         </header>
         <nav>
-          <div className={`${!menu ? 'hidden' : 'visible'}`}>
+          <div className={menuClass}>
+
             <Link
               className="nav-link primaryColor"
               to={'/about'}
