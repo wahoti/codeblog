@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from 'react-router-dom'
-
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import About from '../About'
 import Blog, { BLOGS } from '../Blog'
 
@@ -15,7 +9,7 @@ const NUMBER_OF_POSTS = BLOGS.length
 
 function App() {
   const [menu, setMenu] = useState(null)
-  const toggleMenu = () => setMenu(prevState => prevState ? false : true)
+  const toggleMenu = () => setMenu((prevState) => (prevState ? false : true))
   const menuOff = () => setMenu(false)
 
   let menuClass = 'menu'
@@ -40,12 +34,10 @@ function App() {
         </header>
         <nav>
           <div className={menuClass}>
-
             <Link
               className="nav-link primaryColor"
               to={'/about'}
-              onClick={menuOff}
-            >
+              onClick={menuOff}>
               about
             </Link>
             {BLOGS?.map(({ title }, i) => (
@@ -53,29 +45,27 @@ function App() {
                 className="nav-link primaryColor"
                 to={`/${i}`}
                 key={title}
-                onClick={menuOff}
-              >
+                onClick={menuOff}>
                 {title}
               </Link>
             ))}
           </div>
         </nav>
         <main>
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path={`/:id`}>
-                <Blog />
-              </Route>
-              <Route path="/">
-                <Redirect to={`/${NUMBER_OF_POSTS - 1}`} /> 
-              </Route>
-            </Switch>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path={'/:id'}>
+              <Blog />
+            </Route>
+            <Route path="/">
+              <Redirect to={`/${NUMBER_OF_POSTS - 1}`} />
+            </Route>
+          </Switch>
         </main>
         <aside></aside>
-        <footer>
-        </footer>
+        <footer></footer>
       </div>
     </>
   )

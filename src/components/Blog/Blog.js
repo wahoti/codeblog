@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react'
-
 import { useParams } from 'react-router-dom'
-
 import './Blog.css'
 import BasePost from './posts/Post'
 
@@ -23,7 +21,7 @@ const B0 = React.lazy(() => import('./posts/B0'))
 
 // ADD TO RENDER LIST
 const BLOGS_RENDER = [
-  () => (<B0 />),
+  () => <B0 />,
   // () => (<B1 />),
   // () => (<B2 />),
   // () => (<B3 />),
@@ -39,13 +37,14 @@ const BLOGS_RENDER = [
 
 // ADD TO BLOGS LIST
 export const BLOGS = [
-  { // 0
+  {
+    // 0
     date: 'April 7th 2021',
     title: 'introduction',
   },
 ]
 
-function Blog(props) {
+function Blog() {
   let { id } = useParams()
 
   const renderBlog = (blogId) => {
@@ -54,9 +53,17 @@ function Blog(props) {
 
     if (post) {
       let Post = post.bind(this)
-      return <BasePost title={postData.title} date={postData.date}><Post /></BasePost>
+      return (
+        <BasePost title={postData.title} date={postData.date}>
+          <Post />
+        </BasePost>
+      )
     } else {
-    return <BasePost><p>post not found</p></BasePost>
+      return (
+        <BasePost>
+          <p>post not found</p>
+        </BasePost>
+      )
     }
   }
 

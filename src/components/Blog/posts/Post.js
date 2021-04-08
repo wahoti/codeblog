@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Post = ({ title, date, children }) => (
   <div className="post-wrapper">
     <h3 className="primaryColor">{date}</h3>
