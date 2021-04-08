@@ -4,7 +4,14 @@ nav div {
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+}
+
+.menu a {
   opacity: 30%;
+}
+
+.menu a:hover {
+  opacity: 1;
 }
 
 .container {
@@ -58,7 +65,7 @@ header {
   }
 
   .menu {
-    border-right: 1px groove #ffcc00;
+    border-right: 1px groove #ffcc0077;
     overflow: hidden;
   }
 
@@ -113,7 +120,7 @@ header {
   }
 
   .menu {
-    border-bottom: 1px groove #ffcc00;
+    border-bottom: 1px groove #ffcc0077;
     overflow: hidden;
   }
 
