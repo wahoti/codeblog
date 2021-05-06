@@ -1,12 +1,13 @@
 import React from 'react'
+import { StyledImgWrapper, StyledImgBlurb, StyledImg } from './Blog.styled'
 
 const Img = ({ src, alt, blurb }) => (
-  <div className="img-wrapper">
-    <img src={src} alt={alt} />
-    <div className="img-blurb">
+  <StyledImgWrapper>
+    <StyledImg src={src} alt={alt} />
+    <StyledImgBlurb>
       <p>{blurb}</p>
-    </div>
-  </div>
+    </StyledImgBlurb>
+  </StyledImgWrapper>
 )
 
 export default Img

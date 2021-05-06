@@ -1,11 +1,12 @@
 import React from 'react'
+import { StyledPostWrapper, StyledHeader } from '../Blog.styled'
 
 const Post = ({ title, date, children }) => (
-  <div className="post-wrapper">
-    <h3 className="primaryColor">{date}</h3>
-    <h3 className="primaryColor">{title}</h3>
+  <StyledPostWrapper>
+    <StyledHeader>{date}</StyledHeader>
+    <StyledHeader>{title}</StyledHeader>
     {children}
-  </div>
+  </StyledPostWrapper>
 )
 
 export default Post

@@ -1,57 +1,57 @@
 import React, { useState } from 'react'
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import About from '../About'
 import Blog, { BLOGS } from '../Blog'
-
-import './App.css'
+import {
+  StyledMenu,
+  StyledContainer,
+  StyledHeader,
+  StyledHamburger,
+  StyledMain,
+  StyledFooter,
+  StyledLink,
+} from './App.styled'
 
 const NUMBER_OF_POSTS = BLOGS.length
 
 function App() {
-  const [menu, setMenu] = useState(null)
+  const [menu, setMenu] = useState(false)
   const toggleMenu = () => setMenu((prevState) => (prevState ? false : true))
   const menuOff = () => setMenu(false)
 
-  let menuClass = 'menu'
-  if (menu === null) {
-    menuClass += ' menu-init'
-  } else if (menu) {
-    menuClass += ' menu-show'
-  } else if (!menu) {
-    menuClass += ' menu-hide'
-  }
+  // let menuClass = 'menu'
+  // if (menu === null) {
+  //   menuClass += ' menu-init'
+  // } else if (menu) {
+  //   menuClass += ' menu-show'
+  // } else if (!menu) {
+  //   menuClass += ' menu-hide'
+  // }
 
   return (
     <>
-      <div className="container tertiaryColorBack">
-        <header className="tertiaryColorBack primaryBorderBot">
+      <StyledContainer>
+        <StyledHeader>
           code-blog
-          <div className="hamburger" onClick={toggleMenu}>
+          <StyledHamburger onClick={toggleMenu}>
             <div></div>
             <div></div>
             <div></div>
-          </div>
-        </header>
+          </StyledHamburger>
+        </StyledHeader>
         <nav>
-          <div className={menuClass}>
-            <Link
-              className="nav-link primaryColor"
-              to={'/about'}
-              onClick={menuOff}>
+          <StyledMenu menu={menu}>
+            <StyledLink to={'/about'} onClick={menuOff}>
               about
-            </Link>
+            </StyledLink>
             {BLOGS?.map(({ title }, i) => (
-              <Link
-                className="nav-link primaryColor"
-                to={`/${i}`}
-                key={title}
-                onClick={menuOff}>
+              <StyledLink to={`/${i}`} key={title} onClick={menuOff}>
                 {title}
-              </Link>
+              </StyledLink>
             ))}
-          </div>
+          </StyledMenu>
         </nav>
-        <main>
+        <StyledMain>
           <Switch>
             <Route path="/about">
               <About />
@@ -63,10 +63,10 @@ function App() {
               <Redirect to={`/${NUMBER_OF_POSTS - 1}`} />
             </Route>
           </Switch>
-        </main>
+        </StyledMain>
         <aside></aside>
-        <footer></footer>
-      </div>
+        <StyledFooter></StyledFooter>
+      </StyledContainer>
     </>
   )
 }

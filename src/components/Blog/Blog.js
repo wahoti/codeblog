@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react'
 import { useParams } from 'react-router-dom'
-import './Blog.css'
+// import './Blog.css'
 import BasePost from './posts/Post'
+import { StyledHeader } from './Blog.styled'
 
 // NEW POST TODO
 
@@ -68,7 +69,7 @@ function Blog() {
   }
 
   return (
-    <Suspense fallback={<h3 className="primaryColor">Loading...</h3>}>
+    <Suspense fallback={<StyledHeader>Loading...</StyledHeader>}>
       {renderBlog(id)}
     </Suspense>
   )
