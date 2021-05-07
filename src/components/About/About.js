@@ -10,7 +10,7 @@ const About = () => (
       share information.
     </p>
     <StyledAbout>
-      <a href="https://github.com/wahoti/codeblog">Github</a>
+      <a href="https://github.com/wahoti/codeblog">Source</a>
       <a href="https://www.linkedin.com/in/abdulwahed-wahedi-64b2478a">
         LinkedIn
       </a>

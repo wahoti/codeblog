@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Link } from 'react-router-dom'
 import About from '../About'
 import Blog, { BLOGS } from '../Blog'
 import {
@@ -8,8 +8,8 @@ import {
   StyledHeader,
   StyledHamburger,
   StyledMain,
-  StyledFooter,
-  StyledLink,
+  StyledNav,
+  StyledNavHeader,
 } from './App.styled'
 
 const NUMBER_OF_POSTS = BLOGS.length
@@ -32,25 +32,26 @@ function App() {
     <>
       <StyledContainer>
         <StyledHeader>
-          code-blog
+          <div>code-blog</div>
           <StyledHamburger onClick={toggleMenu}>
             <div></div>
             <div></div>
             <div></div>
           </StyledHamburger>
         </StyledHeader>
-        <nav>
-          <StyledMenu menu={menu}>
-            <StyledLink to={'/about'} onClick={menuOff}>
+        <StyledNav menu={menu}>
+          <StyledMenu>
+            <StyledNavHeader>code-blog</StyledNavHeader>
+            <Link to={'/about'} onClick={menuOff}>
               about
-            </StyledLink>
+            </Link>
             {BLOGS?.map(({ title }, i) => (
-              <StyledLink to={`/${i}`} key={title} onClick={menuOff}>
+              <Link to={`/${i}`} key={title} onClick={menuOff}>
                 {title}
-              </StyledLink>
+              </Link>
             ))}
           </StyledMenu>
-        </nav>
+        </StyledNav>
         <StyledMain>
           <Switch>
             <Route path="/about">
@@ -64,8 +65,6 @@ function App() {
             </Route>
           </Switch>
         </StyledMain>
-        <aside></aside>
-        <StyledFooter></StyledFooter>
       </StyledContainer>
     </>
   )

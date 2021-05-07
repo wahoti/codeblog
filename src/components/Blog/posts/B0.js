@@ -1,27 +1,30 @@
 import React from 'react'
-import Code from '../Code'
+// import React, { useContext } from 'react'
+// import { ThemeContext } from 'styled-components'
+import { ThemeControlContext } from '../../Theme/ThemeWrapper'
+// import Code from '../Code'
 
-const cssSample = `
-  @keyframes slideright {
-    from {
-      max-width: 0;
-      border: none;
-    }
-    to {
-      max-width: 500px;
-    }
-  }
+// const cssSample = `
+//   @keyframes slideright {
+//     from {
+//       max-width: 0;
+//       border: none;
+//     }
+//     to {
+//       max-width: 500px;
+//     }
+//   }
 
-  @keyframes slideleft {
-    from {
-      max-width: 500px;
-    }
-    to {
-      max-width: 0;
-      border: none;
-    }
-  }
-`
+//   @keyframes slideleft {
+//     from {
+//       max-width: 500px;
+//     }
+//     to {
+//       max-width: 0;
+//       border: none;
+//     }
+//   }
+// `
 
 // post idea notes
 // how i set up this blog
@@ -34,15 +37,27 @@ const cssSample = `
 // theme
 // token lifecycle
 
-const Post = () => (
-  <>
-    <p>Hi welcome to my code blog :)</p>
-    <p>
-      Will start off with a series explaining methods I used when making this
-      blog.
-    </p>
-    <Code code={cssSample} language="css" />
-  </>
-)
+{
+  /* <Code code={cssSample} language="css" /> */
+}
+
+const Post = () => {
+  // const themeObject = useContext(ThemeContext)
+
+  return (
+    <>
+      <p>
+        In this post will use{' '}
+        <a href="https://styled-components.com/">Styled-Components</a> to setup
+        themes for a React project.
+      </p>
+      <ThemeControlContext.Consumer>
+        {({ toggleTheme }) => (
+          <button onClick={toggleTheme}>toggle theme</button>
+        )}
+      </ThemeControlContext.Consumer>
+    </>
+  )
+}
 
 export default Post

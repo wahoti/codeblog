@@ -2,7 +2,6 @@ import React, { Suspense } from 'react'
 import { useParams } from 'react-router-dom'
 // import './Blog.css'
 import BasePost from './posts/Post'
-import { StyledHeader } from './Blog.styled'
 
 // NEW POST TODO
 
@@ -40,8 +39,8 @@ const BLOGS_RENDER = [
 export const BLOGS = [
   {
     // 0
-    date: 'April 7th 2021',
-    title: 'introduction',
+    date: 'May 6th 2021',
+    title: 'themes',
   },
 ]
 
@@ -68,11 +67,7 @@ function Blog() {
     }
   }
 
-  return (
-    <Suspense fallback={<StyledHeader>Loading...</StyledHeader>}>
-      {renderBlog(id)}
-    </Suspense>
-  )
+  return <Suspense fallback={<h3>Loading...</h3>}>{renderBlog(id)}</Suspense>
 }
 
 export default Blog

@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyledPostWrapper, StyledHeader } from '../Blog.styled'
+import { StyledPostWrapper } from '../Blog.styled'
 
 const Post = ({ title, date, children }) => (
   <StyledPostWrapper>
-    <StyledHeader>{date}</StyledHeader>
-    <StyledHeader>{title}</StyledHeader>
+    <h3>{date}</h3>
+    <h3>{title}</h3>
     {children}
   </StyledPostWrapper>
 )

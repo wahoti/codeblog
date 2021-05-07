@@ -3,15 +3,8 @@ import styled from 'styled-components'
 export const StyledPostWrapper = styled.div`
   overflow-y: hidden;
   overflow-x: hidden;
-  padding: 16px;
+  padding: 0 16px;
   position: relative;
-  p {
-    color: white;
-  }
-`
-
-export const StyledHeader = styled.h3`
-  color: #ffcc00;
 `
 
 export const StyledImgWrapper = styled.div`
