@@ -11,7 +11,7 @@ export const StyledPageWrapper = styled.section`
 `
 
 const ThemeWrapper = ({ children }) => {
-  const [themeMode, setThemeMode] = useState(getTheme() || 'light')
+  const [themeMode, setThemeMode] = useState(getTheme() || 'dark')
   const [customTheme, setCustomTheme] = useState(null)
 
   const toggleTheme = () => {

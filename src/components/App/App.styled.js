@@ -48,7 +48,6 @@ export const StyledNav = styled.div`
   }
   @media (min-width: 700px) {
     background-image: ${({ theme }) => theme?.gradient};
-    /* border-right: 1px solid ${({ theme }) => theme?.color2}; */
     grid-column: 1;
     grid-row: 1 / 3;
   }
@@ -67,13 +66,22 @@ export const StyledMenu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  a {
-    margin: 4px;
-    /* opacity: 30%; */
-    color: ${({ theme }) => theme?.color2};
-  }
-  a:hover {
-    /* opacity: 1; */
+  width: 100%;
+`
+
+export const StyledMenuItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: ${({ theme }) => theme?.color2}33;
+  color: ${({ theme }) => theme?.color1};
+  cursor: pointer;
+  border-left: ${({ selected, theme }) =>
+    selected ? `3px solid ${theme?.color1}` : 'none'};
+  :hover {
+    background-color: ${({ theme }) => theme?.color2};
   }
 `
 
@@ -93,10 +101,8 @@ export const StyledHamburger = styled.div`
 export const StyledMain = styled.main`
   background-color: ${({ theme }) => theme?.light};
   height: 100%;
-  @media (min-width: 700px) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  width: 100%;
+  min-width: 0;
   p {
     color: ${({ theme }) => theme?.dark};
   }
@@ -105,6 +111,13 @@ export const StyledMain = styled.main`
   }
   h3 {
     color: ${({ theme }) => theme?.color1};
+  }
+  code {
+    word-break: break-all !important;
+    font-size: 12px;
+  }
+  pre {
+    overflow: auto;
   }
 `
 

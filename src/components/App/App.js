@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Switch, Route, Redirect, Link } from 'react-router-dom'
+import {
+  Switch,
+  Route,
+  Redirect,
+  useHistory,
+  useLocation,
+} from 'react-router-dom'
 import About from '../About'
 import Blog, { BLOGS } from '../Blog'
 import {
@@ -10,6 +16,7 @@ import {
   StyledMain,
   StyledNav,
   StyledNavHeader,
+  StyledMenuItem,
 } from './App.styled'
 
 const NUMBER_OF_POSTS = BLOGS.length
@@ -18,6 +25,13 @@ function App() {
   const [menu, setMenu] = useState(false)
   const toggleMenu = () => setMenu((prevState) => (prevState ? false : true))
   const menuOff = () => setMenu(false)
+  let history = useHistory()
+  let location = useLocation()
+
+  const handleNavigate = (destination) => {
+    menuOff()
+    if (location?.pathname !== destination) history.push(destination)
+  }
 
   // let menuClass = 'menu'
   // if (menu === null) {
@@ -42,13 +56,18 @@ function App() {
         <StyledNav menu={menu}>
           <StyledMenu>
             <StyledNavHeader>code-blog</StyledNavHeader>
-            <Link to={'/about'} onClick={menuOff}>
+            <StyledMenuItem
+              onClick={() => handleNavigate('/about')}
+              selected={location?.pathname === '/about'}>
               about
-            </Link>
+            </StyledMenuItem>
             {BLOGS?.map(({ title }, i) => (
-              <Link to={`/${i}`} key={title} onClick={menuOff}>
+              <StyledMenuItem
+                key={title}
+                onClick={() => handleNavigate(`/${i}`)}
+                selected={location?.pathname === `/${i}`}>
                 {title}
-              </Link>
+              </StyledMenuItem>
             ))}
           </StyledMenu>
         </StyledNav>

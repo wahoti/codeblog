@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledPostWrapper = styled.div`
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
   padding: 0 16px;
   position: relative;
 `
