@@ -7,7 +7,7 @@ import BasePost from './posts/Post'
 
 // ADD IMPORT
 const B0 = React.lazy(() => import('./posts/B0'))
-// const B1 = React.lazy(() => import('./posts/B1'))
+const B1 = React.lazy(() => import('./posts/B1'))
 // const B2 = React.lazy(() => import('./posts/B2'))
 // const B3 = React.lazy(() => import('./posts/B3'))
 // const B4 = React.lazy(() => import('./posts/B4'))
@@ -22,7 +22,7 @@ const B0 = React.lazy(() => import('./posts/B0'))
 // ADD TO RENDER LIST
 const BLOGS_RENDER = [
   () => <B0 />,
-  // () => (<B1 />),
+  () => <B1 />,
   // () => (<B2 />),
   // () => (<B3 />),
   // () => (<B4 />),
@@ -41,6 +41,11 @@ export const BLOGS = [
     // 0
     date: 'May 6th 2021',
     title: 'themes',
+  },
+  {
+    // 1
+    date: 'June 9th 2021',
+    title: 'collapsable',
   },
 ]
 
