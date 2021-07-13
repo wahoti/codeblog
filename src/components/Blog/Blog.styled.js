@@ -5,6 +5,9 @@ export const StyledPostWrapper = styled.div`
   overflow-x: hidden; */
   padding: 0 16px;
   position: relative;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
 `
 
 export const StyledImgWrapper = styled.div`
@@ -21,6 +24,7 @@ export const StyledImgBlurb = styled.div`
 `
 
 export const StyledImg = styled.img`
-  max-height: 80vh;
+  max-height: 50vh;
   max-width: 100%;
+  object-fit: cover;
 `

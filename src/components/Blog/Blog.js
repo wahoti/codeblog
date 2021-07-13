@@ -8,11 +8,11 @@ import BasePost from './posts/Post'
 // ADD IMPORT
 const B0 = React.lazy(() => import('./posts/B0'))
 const B1 = React.lazy(() => import('./posts/B1'))
-// const B2 = React.lazy(() => import('./posts/B2'))
-// const B3 = React.lazy(() => import('./posts/B3'))
-// const B4 = React.lazy(() => import('./posts/B4'))
-// const B5 = React.lazy(() => import('./posts/B5'))
-// const B6 = React.lazy(() => import('./posts/B6'))
+const B2 = React.lazy(() => import('./posts/B2'))
+const B3 = React.lazy(() => import('./posts/B3'))
+const B4 = React.lazy(() => import('./posts/B4'))
+const B5 = React.lazy(() => import('./posts/B5'))
+const B6 = React.lazy(() => import('./posts/B6'))
 // const B7 = React.lazy(() => import('./posts/B7'))
 // const B8 = React.lazy(() => import('./posts/B8'))
 // const B9 = React.lazy(() => import('./posts/B9'))
@@ -23,11 +23,11 @@ const B1 = React.lazy(() => import('./posts/B1'))
 const BLOGS_RENDER = [
   () => <B0 />,
   () => <B1 />,
-  // () => (<B2 />),
-  // () => (<B3 />),
-  // () => (<B4 />),
-  // () => (<B5 />),
-  // () => (<B6 />),
+  () => <B2 />,
+  () => <B3 />,
+  () => <B4 />,
+  () => <B5 />,
+  () => <B6 />,
   // () => (<B7 />),
   // () => (<B8 />),
   // () => (<B9 />),
@@ -46,6 +46,31 @@ export const BLOGS = [
     // 1
     date: 'June 9th 2021',
     title: 'collapsable',
+  },
+  {
+    // 2
+    date: 'June 19th 2021',
+    title: 'api request',
+  },
+  {
+    // 3
+    date: 'June 19th 2021',
+    title: 'modals?',
+  },
+  {
+    // 4
+    date: 'June 19th 2021',
+    title: 'responsive layout',
+  },
+  {
+    // 5
+    date: 'June 22th 2021',
+    title: 'use effect / life cycle',
+  },
+  {
+    // 6
+    date: 'July 13th 2021',
+    title: 'modals',
   },
 ]
 
